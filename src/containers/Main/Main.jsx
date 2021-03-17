@@ -14,10 +14,6 @@ import {
   getSearchId,
   getTicketsAll,
   getSortedTickets,
-  // getTicketsNone,
-  // getTicketsOne,
-  // getTicketsTwo,
-  // getTicketsThree,
   getStop,
   getCheap,
   getFetching,
@@ -30,10 +26,6 @@ const Main = ({
   ticketsAll,
   isFetching,
   sortedTickets,
-  // ticketsNone,
-  // ticketsTwo,
-  // ticketsThree,
-  // ticketsOne,
   stop,
   cheap,
 }) => {
@@ -48,10 +40,6 @@ const Main = ({
     addTickets,
     ticketsAll,
     sortedTickets,
-    // ticketsOne,
-    // ticketsNone,
-    // ticketsTwo,
-    // ticketsThree,
     slice,
   ]);
 
@@ -61,12 +49,6 @@ const Main = ({
 
   let ticketList = [];
   const tickets = [...(sortedTickets || [])];
-  // const tickets = [
-  //   ...(ticketsNone || []),
-  //   ...(ticketsOne || []),
-  //   ...(ticketsTwo || []),
-  //   ...(ticketsThree || []),
-  // ];
 
   if (tickets) {
     if (cheap) {
@@ -114,10 +96,6 @@ const mapStateToProps = (state) => ({
   cheap: getCheap(state),
   ticketsAll: getTicketsAll(state),
   sortedTickets: getSortedTickets(state),
-  // ticketsNone: getTicketsNone(state),
-  // ticketsOne: getTicketsOne(state),
-  // ticketsTwo: getTicketsTwo(state),
-  // ticketsThree: getTicketsThree(state),
   isFetching: getFetching(state),
   stop: getStop(state),
 });
