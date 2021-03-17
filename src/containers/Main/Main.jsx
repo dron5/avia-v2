@@ -13,10 +13,11 @@ import classes from "./Main.module.scss";
 import {
   getSearchId,
   getTicketsAll,
-  getTicketsNone,
-  getTicketsOne,
-  getTicketsTwo,
-  getTicketsThree,
+  getSortedTickets,
+  // getTicketsNone,
+  // getTicketsOne,
+  // getTicketsTwo,
+  // getTicketsThree,
   getStop,
   getCheap,
   getFetching,
@@ -28,10 +29,11 @@ const Main = ({
   addTickets,
   ticketsAll,
   isFetching,
-  ticketsNone,
-  ticketsTwo,
-  ticketsThree,
-  ticketsOne,
+  sortedTickets,
+  // ticketsNone,
+  // ticketsTwo,
+  // ticketsThree,
+  // ticketsOne,
   stop,
   cheap,
 }) => {
@@ -45,10 +47,11 @@ const Main = ({
     addSearchId,
     addTickets,
     ticketsAll,
-    ticketsOne,
-    ticketsNone,
-    ticketsTwo,
-    ticketsThree,
+    sortedTickets,
+    // ticketsOne,
+    // ticketsNone,
+    // ticketsTwo,
+    // ticketsThree,
     slice,
   ]);
 
@@ -57,12 +60,13 @@ const Main = ({
   };
 
   let ticketList = [];
-  const tickets = [
-    ...(ticketsNone || []),
-    ...(ticketsOne || []),
-    ...(ticketsTwo || []),
-    ...(ticketsThree || []),
-  ];
+  const tickets = [...(sortedTickets || [])];
+  // const tickets = [
+  //   ...(ticketsNone || []),
+  //   ...(ticketsOne || []),
+  //   ...(ticketsTwo || []),
+  //   ...(ticketsThree || []),
+  // ];
 
   if (tickets) {
     if (cheap) {
@@ -109,10 +113,11 @@ const mapStateToProps = (state) => ({
   searchId: getSearchId(state),
   cheap: getCheap(state),
   ticketsAll: getTicketsAll(state),
-  ticketsNone: getTicketsNone(state),
-  ticketsOne: getTicketsOne(state),
-  ticketsTwo: getTicketsTwo(state),
-  ticketsThree: getTicketsThree(state),
+  sortedTickets: getSortedTickets(state),
+  // ticketsNone: getTicketsNone(state),
+  // ticketsOne: getTicketsOne(state),
+  // ticketsTwo: getTicketsTwo(state),
+  // ticketsThree: getTicketsThree(state),
   isFetching: getFetching(state),
   stop: getStop(state),
 });
