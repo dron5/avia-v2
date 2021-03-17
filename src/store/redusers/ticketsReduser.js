@@ -12,7 +12,7 @@ const ticketsReduser = (state = initState, action) => {
     case "ADD_TICKETS":
       return {
         ...state,
-        all: [...state.all, ...action.payload.tickets.all],
+        all: [...state.all, ...action.payload.tickets],
         // none: [...state.none, ...action.payload.tickets.none],
         // one: [...state.one, ...action.payload.tickets.one],
         // two: [...state.two, ...action.payload.tickets.two],
