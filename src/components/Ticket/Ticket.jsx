@@ -29,7 +29,7 @@ const Ticket = ({ price, carrier, segments }) => {
         return "0 ПЕРЕСАДОК";
     }
   };
-  
+
   return (
     <div className={classes.ticket}>
       <div className={classes.ticket__price}>

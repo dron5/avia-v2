@@ -33,15 +33,7 @@ const Main = ({
   useEffect(() => {
     if (!searchId) addSearchId();
     if (!stop && searchId !== "") addTickets(searchId);
-  }, [
-    searchId,
-    stop,
-    addSearchId,
-    addTickets,
-    ticketsAll,
-    sortedTickets,
-    slice,
-  ]);
+  }, [searchId, stop, addSearchId, addTickets, ticketsAll, slice]);
 
   const showMoreTickets = () => {
     setSlice(slice + 5);

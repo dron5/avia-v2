@@ -13,7 +13,7 @@ const getTicketsNone = (state) => {
         ticket.segments[1].stops.length === 0
     );
     return none;
-  };
+  }
   return [];
 };
 const getTicketsOne = (state) =>
@@ -35,12 +35,12 @@ export const getSortedTickets = (state) => {
   const one = getTicketsOne(state);
   const two = getTicketsTwo(state);
   const three = getTicketsThree(state);
-    
+
   const data = [
     ...(none || []),
     ...(one || []),
     ...(two || []),
     ...(three || []),
-    ];
-  return data; 
+  ];
+  return data;
 };
