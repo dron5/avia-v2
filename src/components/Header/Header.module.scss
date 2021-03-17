@@ -1,0 +1,37 @@
+$backgroundFooter: #2196f3;
+$backgroundColor: #fff;
+$boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+$appColor: #f3f7fa;
+
+.header {
+  height: 50px;
+  width: 100%;
+  margin-bottom: auto;
+  margin-top: 0;
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  background-color: $backgroundColor;
+}
+.header__btn-cheap {
+  margin-bottom: 0px;
+  border: none;
+  width: 50%;
+  height: 50px !important;
+  background-color: #fff;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  outline: none;
+}
+.header__btn-fast {
+  margin-bottom: 0px;
+  width: 50%;
+  border: none;
+  height: 50px !important;
+  background-color: #fff;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+  outline: none;
+}
+.btn__active {
+  background-color: $backgroundFooter;
+}
