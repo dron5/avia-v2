@@ -1,3 +1,4 @@
+import { createSelector } from 'reselect';
 import stopsFilter from "../tools/actionFilter";
 
 export const getSearchId = (state) => state.filteReduser.searchId;
@@ -30,17 +31,11 @@ export const getStop = (state) => state.ticketsReduser.stop;
 export const getTicketsAll = (state) =>
   state.filteReduser.all && state.ticketsReduser.all.length;
 
-export const getSortedTickets = (state) => {
-  const none = getTicketsNone(state);
-  const one = getTicketsOne(state);
-  const two = getTicketsTwo(state);
-  const three = getTicketsThree(state);
+export const getSortedTickets = createSelector (
+  getTicketsNone,
+  getTicketsOne,
+  getTicketsTwo,
+  getTicketsThree,
 
-  const data = [
-    ...(none || []),
-    ...(one || []),
-    ...(two || []),
-    ...(three || []),
-  ];
-  return data;
-};
+  (none, one, two, three) => ([...(none || []), ...(one || []), ...(two || []), ...(three || []),])
+);

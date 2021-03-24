@@ -24,7 +24,7 @@ const Main = ({
   addSearchId,
   addTickets,
   ticketsAll,
-  isFetching,
+  // isFetching,
   sortedTickets,
   stop,
   cheap,
@@ -62,7 +62,8 @@ const Main = ({
         <Header />
         <main className={classes.main}>
           <div className={classes.main__img}>
-            {isFetching ? <img src={loading} alt="loading" /> : null}
+            {!stop ? <img src={loading} alt="loading" /> : null}
+            {/* {isFetching ? <img src={loading} alt="loading" /> : null} */}
             {!tickets.length && (
               <span>Рейсов, подходящих под заданные фильтры, не найдено</span>
             )}
